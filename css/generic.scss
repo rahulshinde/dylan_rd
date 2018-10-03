@@ -1,0 +1,76 @@
+html{
+  font-size:36px;
+}
+
+#site{
+  font-family: 'Jeder', sans-serif;
+  font-size: 1rem;
+  line-height: 1.2em;
+  color: #000;
+  a:link,
+  a:visited{
+    color: #000;
+    text-decoration: none;
+  }
+  a:hover{
+    text-decoration: underline;
+  }
+  header{
+    position: fixed;
+    top: 1rem;
+    left: 0;
+    width: 100%;
+  }
+  .cell{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 1.5rem;
+  }
+  .quarter{
+    width: calc(25% - 3rem);
+  }
+
+  #projects_container{
+    margin-top: 4.6rem;
+    .cell{
+      margin-bottom: 0.6rem;
+      a:hover + .image_container{
+        opacity: 1;
+        transform: translate(-50%, -50%) rotateY(0deg);
+        &.fade{
+          transition: opacity ease 0.4s;
+        }
+        &.rotate{
+          transition: transform ease 1s;
+        }
+      }
+    }
+  }
+
+  .image_container{
+    pointer-events: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80vw;
+    transform: translate(-50%, -50%);
+    z-index: -10;
+    height: 60vh;
+    opacity: 0;
+    perspective: 100px;
+    &.fade{
+    }
+    &.rotate{
+      transform: translate(-50%, -50%) rotateY(90deg);
+      
+    }
+    img{
+      position: absolute;
+      max-width: 100%;
+      max-height: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
