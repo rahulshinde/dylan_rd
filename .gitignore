@@ -4,3 +4,6 @@
 css/.DS_Store
 css/main.css.map
 .DS_Store
+*.scss
+*.scss
+css/generic.scss
